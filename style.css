@@ -8,9 +8,16 @@ body {
 }
 
 .navbar {
-    background-color: #004d40; 
-    border-radius: 0.5rem; 
-    padding: 0.5rem 1rem; 
+    background-color: transparent; 
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 10px rgba(4, 255, 0, 0.2); 
+}
+.related-content {
+    padding: 20px;
+}
+
+.btncn {
+    border: 1px solid green;
 }
 
 .nav-link {
@@ -124,7 +131,7 @@ body {
     margin-bottom: 10px;
  }
  .accordion-button {
-    background-color: #86ceba;
+    background-color: #439a3e;
     color: white;
     transition: background-color 0.5s;
  }
@@ -135,6 +142,7 @@ body {
     margin-top: 30px;
     display: flex;
     justify-content: center;
+    align-items: center;
  }
  .progress-bar {
     font-weight: bold;
@@ -149,7 +157,6 @@ body {
  }
  
  .custom-btn {
-    background-color: #22988e;
     border: none;
     border-radius: 10px;
     padding: 12px 20px;
@@ -212,6 +219,65 @@ body {
 .modal-header {
     background-color: #007bff; 
     color: white;
+}
+
+
+.centered-btn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem; 
+    padding: 15px 15px;
+    border-radius: 8px; 
+    border: none; 
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blinking-btn {
+    animation: blink 1s infinite;
+}
+.nav-link.active {
+    background-color: green !important;
+    color: white !important;
+}
+
+
+.nav-link {
+    color: black;
+}
+
+.review-card {
+    margin-bottom: 20px; 
+}
+
+.review-card .card-header {
+    background-color: #28a745; 
+    color: white;
+    font-weight: bold;
+}
+
+.review-card .card-body {
+    background-color: #e9f7ef; 
+    border: 1px solid #28a745; 
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.btn-ug { background-color: #28a745; color: white; } 
+.btn-grad { background-color: #5cb85c; color: white; } 
+.btn-phd { background-color: #7ed957; color: black; } 
+
+.toast-container {
+    position:fixed;
+    top: 20px;
+    right: 20px;
 }
 
 
