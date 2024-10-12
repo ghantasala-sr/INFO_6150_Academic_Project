@@ -27,37 +27,19 @@
   <body>
     <div class="background-animation"></div>
 
-    <div
-      class="container d-flex justify-content-center align-items-center vh-100"
-    >
+    <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px">
+            <div id="loginFormContainer">
                 <h3 class="text-center mb-4">Login</h3>
-
                 <form id="loginForm">
                     <div class="form-group mb-3">
-            <label for="email" class="form-label"
-              ><i class="fas fa-user"></i> Email</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="email"
-              placeholder="Enter your email address"
-              required
-            />
+                        <label for="email" class="form-label"><i class="fas fa-user"></i> Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Enter your email address" required />
                     </div>
 
                     <div class="form-group mb-3">
-            <label for="password" class="form-label"
-              ><i class="fas fa-key"></i> Password</label
-            >
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              placeholder="Enter password"
-              required
-            />
+                        <label for="password" class="form-label"><i class="fas fa-key"></i> Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" required />
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
