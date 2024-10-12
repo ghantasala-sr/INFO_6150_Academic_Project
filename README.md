@@ -24,6 +24,12 @@ Bootstrap components used :
 
 * Some of the basic bootstrap elements are been used such as col,col-md,col-sm,btn,btn-primary,btn-secondary,container,py,px,mx,my,text-center.
 
+--------------------------------------------
+
+
+Login / Signup page
+
+Bootstrap components used :
 * Container - Harsha & Shashank - It is used for both login and signup.
 * Card - Harsha & Shashank - It is used to structure container for both login and signup.
 * Flexbox utilities - Harsha & Shashank - Used some classes d-flex, justify-content-center, align-items-center, vh-100 to adjust items in center.
@@ -32,6 +38,4 @@ Bootstrap components used :
 * Text utilities - Harsha & Shashank - Used some text utilities text-center, text-danger, mb-3, mt-3.
 
 --------------------------------------------
-
-
 
