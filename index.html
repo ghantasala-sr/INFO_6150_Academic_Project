@@ -3,11 +3,582 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Campus Vitality</title>
+    
 </head>
 <body>
+
+    <!-- Navigation bar-NRV -->
+    <nav class="navbar navbar-expand-lg shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand text-green fw-bold" href="index.html">CampusVitality</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark" aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarDark">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#plans">Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#claim">Claim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="d-flex ms-3">
+                    <a href="login.html" class="btn btn-light me-2 btncn">Login</a>
+                    <a href="#" class="btn btn-light btncn">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
     
+    
+
+    <br>
+
+    
+ <!-- Alert Tab- NRV -->
+<div class="alert alert-success text-center mb-4" role="alert">
+    <h5> <strong>New users: </strong>Get exclusive access to member-only deals and events! Sign up today and start saving! 
+        <a href="#" class="alert-link" data-bs-toggle="modal" data-bs-target="#redirectModal">REGISTER NOW</a>
+        <span class="badge bg-primary rounded-pill small">Exclusive!</span>
+    </h5>
+</div>
+
+
+
+
+    <!-- Carousel - NRV-->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Carousel Column -->
+            <div class="col-md-6">
+                <div id="carouselWithControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets/img1.png" class="d-block w-100" alt="Insurance for Undergraduates">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img2.png" class="d-block w-100" alt="Insurance for Graduates">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img3.jpeg" class="d-block w-100" alt="Insurance for Ph.D. Students">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselWithControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselWithControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Related Content Column - Code by GSR-->
+            <div class="col-md-6 related-content">
+                <h3>Welcome to Campus Vitality !!</h3>
+                <p>Our insurance plans are tailored to meet the needs of students at different levels of their education journey. Here’s what we offer:</p>
+                <ul>
+                    <li><strong>Undergraduate Students:</strong> Affordable premiums with coverage for textbooks, supplies, and basic health needs.</li>
+                    <li><strong>Graduate Students:</strong> Comprehensive health coverage, including international student support and options for research-related insurance.</li>
+                    <li><strong>Ph.D. Students:</strong> Tailored health plans, funding for academic conferences, and specialized mental health support services.</li>
+                </ul>
+                <p>By choosing our insurance, you can focus on your studies without worrying about unexpected medical expenses.</p>
+                <button type="button" class="btn btn-success position-relative" id="show-toast">
+            Click here for Offer!
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                10 left !!
+                <span class="visually-hidden">offers left</span>
+            </span>
+            </button>
+            </div>
+        </div>
+        <div class="toast-container">
+            <div id="benefitsToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Student Vitality Offer</strong>
+                    <small>Just now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    We now offer a 10% discount on premiums for undergraduate students! Check your eligibility.
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!-- Offcanvas- NRV -->
+    <div class="text-center my-4">
+        <div class="row m-2">
+            <div class="col-6 col-md-3">
+                <button class="btn btn-dark w-100 my-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHome">Home</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <button class="btn btn-dark w-100 my-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasPlans">Insurance Plans</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <button class="btn btn-dark w-100 my-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSupport">Support</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <button class="btn btn-dark w-100 my-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResources">Resources</button>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasHome" aria-labelledby="offcanvasHomeLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasHomeLabel">Dear Student,</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Welcome to Campus Vitality! We make it easy for you to manage your insurance needs—anytime, anywhere.</p>
+            <h6>What you can do:</h6>
+            <ul class="list-unstyled">
+                <li><b>Submit a New Claim</b></li>
+                <li><b>View Your Policies</b></li>
+                <li><b>Upgrade Your Plan</b></li>
+                <li><b>Manage Personal Information</b></li>
+                <li><b>Explore Resources</b></li>
+                <li><b>Get Support</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasPlans" aria-labelledby="offcanvasPlansLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasPlansLabel">Our Insurance Plans</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Explore our various insurance plans tailored to meet your needs:</p>
+            <ul class="list-unstyled">
+                <li><b>Basic Plan:</b> Affordable coverage for essential health services.</li>
+                <li><b>Undergraduate Plan:</b> Comprehensive coverage with added benefits.</li>
+                <li><b>Graduate Plan:</b> Special rates and coverage for students.</li>
+                <li><b>Ph.d Plan:</b> Coverage options for the whole family.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasSupport" aria-labelledby="offcanvasSupportLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasSupportLabel">Customer Support</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Need help? Our support team is here for you:</p>
+            <ul class="list-unstyled">
+                <li><b>Contact Us:</b> Reach out via email at <a href="mailto:support@campusvitality.com">support@campusvitality.com</a>.</li>
+                <li><b>FAQs:</b> Visit our FAQ section for quick answers.</li>
+                <li><b>Live Chat:</b> Chat with a representative during business hours.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasResources" aria-labelledby="offcanvasResourcesLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasResourcesLabel">Resources</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Find useful resources to help you navigate your insurance needs:</p>
+            <ul class="list-unstyled">
+                <li><b>Insurance Glossary:</b> Understand common insurance terms.</li>
+                <li><b>Claim Submission Guide:</b> Step-by-step guide to submit claims.</li>
+                <li><b>Policy Management Tips:</b> Best practices for managing your policy.</li>
+            </ul> 
+        </div>
+    </div>
+
+    
+
+    <!-- Cards-SP -->
+   <div class="cardsH2">
+    <h2>Your journey to enhanced health and wellness begins here!</h2>
+</div>
+<div class="row justify-content-center">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card">
+            <img src="assets/register.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Create your account!</h5>
+                <p class="card-text">To get started, please log in using your student credentials on the Campus Vitality website. Once logged in, you’ll be prompted to enter the required information. Make sure to fill out all fields accurately to ensure a smooth enrollment process.</p>
+                <p class="card-text"><small class="text-body-secondary">Register Now!</small></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card">
+            <img src="assets/enroll.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Which plan is most suitable for you?</h5>
+                <p class="card-text">Choose the insurance plan that best fits your needs and enroll today to ensure you're covered! Simply review the available options, select your preferred plan, and complete the enrollment process in just a few easy steps.</p>
+                <p class="card-text"><small class="text-body-secondary">Enroll Now!</small></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card">
+            <img src="assets/claim.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Ready to claim your insurance?</h5>
+                <p class="card-text">Be sure to provide all required information and upload any supporting documents to expedite the review process. Our team is here to assist you every step of the way, so don’t hesitate to reach out if you have any questions. Start your claim today and let us help you get the support you need!</p>
+                <p class="card-text"><small class="text-body-secondary">Claim Now!</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<br/>
+<!-- Code by GSR -->
+<div id="plans"></div>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Insurance Plans for Students</h2>
+
+    <div class="row">
+        <div class="col-md-4 mt-2">
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    Undergraduate Plan
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Coverage: Up to $50,000</li>
+                        <li class="list-group-item">Monthly Premium: $30</li>
+                        <li class="list-group-item">Deductible: $500</li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <button type="button" class="btn btn-success">Choose Plan</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mt-2">
+            <div class="card mb-4">
+                <div class="card-header bg-warning text-white">
+                    Graduate Plan
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Coverage: Up to $100,000</li>
+                        <li class="list-group-item">Monthly Premium: $50</li>
+                        <li class="list-group-item">Deductible: $300</li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <button type="button" class="btn btn-warning">Choose Plan</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mt-2">
+            <div class="card mb-4">
+                <div class="card-header bg-danger text-white">
+                    Ph.D. Plan
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Coverage: Up to $250,000</li>
+                        <li class="list-group-item">Monthly Premium: $80</li>
+                        <li class="list-group-item">Deductible: $150</li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <button type="button" class="btn btn-danger">Choose Plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5"></div>
+    <h2 class="text-center mb-4">Join Us Today!</h2>
+    
+    <div class="text-center mb-4">
+        <button type="button" class="btn btn-ug" data-bs-toggle="popover" title="Undergraduate Students" data-bs-content="
+            <strong>Benefits:</strong><br>
+            - Affordable premiums<br>
+            - Coverage for textbooks and supplies<br>
+            - Flexible payment plans" data-bs-trigger="focus" data-bs-html="true">
+            Undergraduate Benefits
+        </button>
+    </div>
+    
+    <div class="text-center mb-4">
+        <button type="button" class="btn btn-grad" data-bs-toggle="popover" title="Graduate Students" data-bs-content="
+            <strong>Benefits:</strong><br>
+            - Comprehensive health coverage<br>
+            - International student support<br>
+            - Research-related insurance options" data-bs-trigger="focus" data-bs-html="true">
+            Graduate Benefits
+        </button>
+    </div>
+
+    <div class="text-center mb-4">
+        <button type="button" class="btn btn-phd" data-bs-toggle="popover" title="Ph.D. Students" data-bs-content="
+            <strong>Benefits:</strong><br>
+            - Tailored health plans<br>
+            - Funding for conferences<br>
+            - Mental health support services" data-bs-trigger="focus" data-bs-html="true">
+            Ph.D. Benefits
+        </button>
+    </div>
+    
+    <p class="text-center">
+        Click the buttons above to learn more about the benefits tailored specifically for each student category.
+    </p>
+</div>
+<br/><br/>
+<button type="button" class="btn btn-success centered-btn blinking-btn" data-bs-toggle="modal" data-bs-target="#enrollModal">
+    Eager to Join Us?
+</button>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="enrollModal" tabindex="-1" aria-labelledby="enrollModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="enrollModalLabel">Eager to Join Us?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p>We're excited to welcome you to our insurance program! Before you proceed, please ensure you have the following documents ready for enrollment:</p>
+                <h6 class="my-3">Required Documents for Enrollment:</h6>
+                <ul>
+                    <li><strong>Proof of Identity:</strong> A government-issued ID (passport, driver's license, etc.)</li>
+                    <li><strong>Proof of Address:</strong> A utility bill, lease agreement, or bank statement from the last 3 months.</li>
+                    <li><strong>Income Proof:</strong> Salary slips, tax returns, or bank statements to verify income details.</li>
+                    <li><strong>Medical History:</strong> If applicable, provide medical records or a health report.</li>
+                    <li><strong>Previous Insurance Details:</strong> Any documents related to past insurance policies, if relevant.</li>
+                </ul>
+                <p>Once you have gathered these documents, click "Proceed" to begin the enrollment process. We look forward to having you on board!</p>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success">Proceed</button>
+            </div>
+        </div>
+    </div>
+</div>
+<br/><br/>
+
+<!-- Progress Bar-SP -->
+ <div id="claim"></div>
+<div class="progBar">
+    <div class="container mt-5">
+        <!-- Collapse Button-SP -->
+         <h3>Claiming Process</h3>
+        <p> 
+            Our claim process is designed to be straightforward and transparent. 
+            Below, you will find the stages of the claim process. Click the button to learn more!
+        </p>
+        <p>
+            <button class="btn btn-success custom-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                <h6 class="mb-0">Know about our claim process !!</h6>
+            </button>
+        </p>
+        <!-- Collapsible Content-SP -->
+        <div class="collapse collapse-horizontal" id="collapseWidthExample">
+            <div class="card card-body custom-card">
+                <p><strong>25% - Claim Submitted:</strong> The initial submission of the insurance claim has been successfully completed.</p>
+                <p><strong>50% - Under Review:</strong> The claim is being reviewed by the relevant team to assess the next steps.</p>
+                <p><strong>75% - Additional Information Requested:</strong> The review process requires additional information or documents to proceed further.</p>
+                <p><strong>100% - Claim Processed:</strong> The insurance claim has been fully processed, and the outcome is finalized.</p>
+            </div>
+        </div>   
+
+        <!-- Progress Bars-SP -->
+        <div class="progress mb-3">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 25%;">25%: Claim</div>
+        </div>
+        <div class="progress mb-3">
+            <div class="progress-bar bg-info text-dark" role="progressbar" style="width: 50%;">50%: Under Review</div>
+        </div>
+        <div class="progress mb-3">
+            <div class="progress-bar bg-warning text-dark" role="progressbar" style="width: 75%;">75%: Additional Info Requested</div>
+        </div>
+        <div class="progress mb-3">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;">100%: Claim Processed</div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab">Pre-claim</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab">Post-claim</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <!-- Pre-claim Tab -->
+        <div class="tab-pane fade show active" id="home" role="tabpanel">
+            <h4 class="my-3">Pre-claim Process</h4>
+            <p>Before filing a claim, there are several steps that need to be completed to ensure the process goes smoothly. Below are the primary stages involved:</p>
+            <ol>
+                <li><strong>Gather Necessary Documents:</strong> Make sure to collect all relevant documents like receipts, invoices, proof of ownership, and identification.</li>
+                <li><strong>Initial Assessment:</strong> Conduct an initial assessment to determine the extent of the damage or loss. This will help in creating a more detailed claim.</li>
+                <li><strong>Contact Your Insurance Provider:</strong> Reach out to your insurance provider to report the incident and gather information on how to proceed with the claim.</li>
+                <li><strong>Fill Out a Pre-claim Form:</strong> Many providers require an initial pre-claim form or notification. Be sure to fill this out accurately.</li>
+                <li><strong>Appraisal and Estimation:</strong> Some insurance companies may require an appraisal of the damage. This step helps ensure the correct claim value is established.</li>
+            </ol>
+            <p>Once these steps are completed, you can proceed to file a formal claim with your insurance provider.</p>
+        </div>
+
+        <!-- Post-claim Tab -->
+        <div class="tab-pane fade" id="profile" role="tabpanel">
+            <h4 class="my-3">Post-claim Process</h4>
+            <p>After filing a claim, the post-claim process begins, which involves the following stages:</p>
+            <ol>
+                <li><strong>Claim Review:</strong> The insurance company will review your claim, verify the submitted documents, and confirm coverage.</li>
+                <li><strong>Investigation:</strong> Depending on the complexity of the claim, the insurance company might conduct an investigation to verify details of the claim.</li>
+                <li><strong>Adjuster Assignment:</strong> An insurance adjuster may be assigned to assess the damage and estimate the compensation or payout.</li>
+                <li><strong>Claim Approval:</strong> Once the investigation is complete, the insurance company will either approve or deny the claim. If approved, they will provide a settlement offer.</li>
+                <li><strong>Settlement:</strong> Upon accepting the settlement offer, you will receive the payment, either directly or to the service provider depending on the claim type.</li>
+                <li><strong>Follow-up:</strong> In some cases, follow-up communication may be required to ensure all aspects of the claim are completed and closed properly.</li>
+            </ol>
+            <p>It’s important to maintain communication with your insurance provider during this phase to ensure a smooth and timely resolution of your claim.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Pagination-SP & GSR -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">Customer Reviews</h2>
+    
+    <div class="row" id="review-container">
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination mt-4" id="pagination">
+        </ul>
+    </nav>
+</div>
+
+
+
+    <!--Modal Box - NRV -->
+    <div class="modal fade" id="redirectModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="redirectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="redirectModalLabel">Attention</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>You will be redirected to the login page.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-dark" onclick="location.href='#'">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accordion-SP -->
+<div class="accordion" id="accordionExample">
+    <h3 class="m-3 text-center">Frequently Asked Questions (FAQ's)</h3>
+    <div class="accordion-item m-3">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <b>What should I do if I need medical attention?</b>
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                If you require immediate medical assistance, contact the Campus Health Center for guidance. You can also reach out to your insurance provider to understand your coverage options. It's essential to seek help promptly to ensure you receive the necessary care.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item m-3">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <b>How can I claim insurance for medical expenses?</b>
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                To claim insurance for medical expenses, log in to the Campus Vitality website and submit your claim through the designated claim submission portal. Be sure to include all required documentation to expedite the review and approval process.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item m-3">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <b>What documents are required for insurance claims?</b>
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                You’ll need to provide copies of your medical records, receipts for medical expenses, and any additional documents requested by your insurance provider. Make sure all documents are legible and accurately reflect the services rendered.
+            </div>
+        </div>
+    </div>
+</div>
+ 
+
+<!-- Code by GSR -->
+<div id="contact"></div>
+        <div class="container my-5">
+            <h2 class="text-center mb-4">Want to connect with us !! </h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">  <!-- Half page width on medium and larger screens -->
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="claimType" class="form-label">Student Type</label>
+                            <select class="form-select" id="claimType" required>
+                                <option value="">Select student type</option>
+                                <option value="undergraduate">Undergraduate</option>
+                                <option value="graduate">Graduate</option>
+                                <option value="phd">Ph.D.</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <!-- Footer - NRV-->
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; 2024 Campus Vitality. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
+
