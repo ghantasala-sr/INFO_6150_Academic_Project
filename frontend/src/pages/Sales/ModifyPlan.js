@@ -65,7 +65,7 @@ const ModifyPlan = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate all fields
+    // Validation of all the fields
     const isPlanNameValid = validateField("planName", formData.planName);
     const isDescriptionValid = validateField(
       "description",
@@ -74,7 +74,7 @@ const ModifyPlan = () => {
     const isPriceValid = validateField("price", formData.price);
 
     if (!isPlanNameValid || !isDescriptionValid || !isPriceValid) {
-      return; // Exit if validation fails
+      return; // Exit if the validation fails
     }
 
     const token = localStorage.getItem("token");
