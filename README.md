@@ -3,6 +3,13 @@
 
 Campus Vitality is a web-based application exclusively designed for students to access affordable and tailored insurance plans. 
 
+# Team members
+- Srinivasa Rithik Ghantasala (002334850)
+- Harsha Vardhan Reddy Kallem (002379909)
+- Shashank Reddy Janke (002056771)
+- Narasimha Reddy Valam (002314127)
+- Sreeja Pulaparty (002314840)
+
 
 # Key highlights of Campus Vitality:
 * Student-Centric: Prioritizes affordability and ease of use.
