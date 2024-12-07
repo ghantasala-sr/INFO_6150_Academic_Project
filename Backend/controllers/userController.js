@@ -84,8 +84,16 @@ exports.createUser = async (req, res) => {
       user,
     });
   } catch (error) {
-    console.error("Error creating user:", error.message);
-    res.status(400).json({ message: error.message });
+    // Handle Duplicate Key Errors
+    if (error.code === 11000) {
+      const duplicateField = Object.keys(error.keyValue)[0]; // e.g., 'email' or 'username'
+      return res.status(409).json({
+        message: `The ${duplicateField} '${error.keyValue[duplicateField]}' is already in use.`,
+      });
+    }
+
+    // Handle General Errors
+    res.status(500).json({ message: "Failed to register student" });
   }
 };
 

@@ -1,7 +1,6 @@
 const Stripe = require("stripe");
 const Plan = require("../models/planModel");
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-
 const PDFDocument = require("pdfkit");
 const fs = require("fs");
 const Booking = require("../models/booking");
@@ -201,23 +200,110 @@ exports.stripeWebhook = async (req, res) => {
       const filePath = `./invoices/invoice_${booking._id}.pdf`;
       const invoiceUrl = `/invoices/invoice_${booking._id}.pdf`;
 
-      const doc = new PDFDocument();
+      const doc = new PDFDocument({
+        size: "A4",
+        margin: 50,
+      });
+
+      // Fetch user details (Assuming `user` is fetched based on `userId`)
+      const user = await User.findById(userId); // Ensure User model is imported // Ensure User model is imported
+      const { name, email, phone } = user || {};
+
+      // Determine duration label
       const durationLabel =
         session.metadata.durationType === "yearly"
           ? `${session.metadata.duration} year(s)`
           : `${session.metadata.duration} month(s)`;
 
-      doc.pipe(fs.createWriteStream(filePath)); // Write the invoice to a file
+      // Pipe to write the invoice to a file
+      doc.pipe(fs.createWriteStream(filePath));
 
-      doc.fontSize(16).text("Invoice", { align: "center" });
-      doc.text(`Booking ID: ${booking._id}`);
-      doc.text(`Plan Name: ${plan.planName}`);
-      doc.text(`Price: $${plan.price}`);
-      doc.text(`Payment Status: succeeded`);
-      doc.text(`Date: ${new Date().toLocaleString()}`);
-      doc.text(`Start Date: ${session.metadata.startDate}`);
-      doc.text(`Duration: ${durationLabel}`);
-      doc.text(`Total Paid: $${totalPrice}`);
+      // Add company name
+      doc
+        .fontSize(20)
+        .text("Campus Vitality™", 160, 60, { align: "left" })
+        .moveDown();
+
+      // Add invoice header
+      doc.fontSize(16).text("Invoice", { align: "center" }).moveDown();
+
+      // Add user details
+      doc
+        .fontSize(12)
+        .text("Customer Details", { underline: true, align: "left" })
+        .moveDown()
+        .text("Name:", 50, doc.y)
+        .text(name || "N/A", 150, doc.y)
+        .moveDown()
+        .text("Email:", 50, doc.y)
+        .text(email || "N/A", 150, doc.y)
+        .moveDown()
+        .text("Phone:", 50, doc.y)
+        .text(phone || "N/A", 150, doc.y)
+        .moveDown(2);
+
+      // Add booking details
+      doc
+        .fontSize(12)
+        .text("Booking Details", { underline: true, align: "left" })
+        .moveDown();
+
+      doc
+        .fontSize(12)
+        .text("Booking ID:", 50, doc.y)
+        .text(`${booking._id}`, 150, doc.y);
+
+      doc
+        .moveDown()
+        .text("Plan Name:", 50, doc.y)
+        .text(`${plan.planName}`, 150, doc.y);
+
+      doc
+        .moveDown()
+        .text("Plan Service Provider :", 50, doc.y)
+        .text(`${plan.serviceProvider}`, 150, doc.y);
+
+      doc
+        .moveDown()
+        .text("Price:", 50, doc.y)
+        .text(`$${plan.price}`, 150, doc.y);
+
+      doc
+        .moveDown()
+        .text("Payment Status:", 50, doc.y)
+        .text("Succeeded", 150, doc.y);
+
+      doc
+        .moveDown()
+        .text("Invoice Date:", 50, doc.y)
+        .text(new Date().toLocaleString(), 150, doc.y);
+
+      doc
+        .moveDown()
+        .text("Start Date:", 50, doc.y)
+        .text(`${session.metadata.startDate}`, 150, doc.y);
+
+      doc
+        .moveDown()
+        .text("Duration:", 50, doc.y)
+        .text(`${durationLabel}`, 150, doc.y);
+
+      doc
+        .moveDown()
+        .text("Total Paid:", 50, doc.y)
+        .text(`$${totalPrice}`, 150, doc.y)
+        .moveDown();
+
+      // Add footer note
+      doc
+        .moveDown(2)
+        .fontSize(10)
+        .text(
+          "Your insurance copy will be sent by the concerned company in 2-3 working days.",
+          { align: "center" }
+        );
+
+      // Finalize the document
       doc.end();
 
       // Save the invoice URL in the booking record
