@@ -25,7 +25,7 @@ const SalesPage = () => {
     }
   };
 
-  // Fetch all plans available (for sales user to view)
+  // Fetch all plans (for sales user to view)
   const fetchAllPlans = async () => {
     const token = localStorage.getItem("token");
     try {
@@ -43,7 +43,7 @@ const SalesPage = () => {
     fetchAllPlans();
   }, []);
 
-  // Navigate to the modify plan page
+  // Navigate to the modify plan
   const handleModifyPlan = (planId) => {
     navigate(`/sales/modify-plan/${planId}`);
   };
